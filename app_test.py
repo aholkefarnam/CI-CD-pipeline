@@ -106,3 +106,19 @@ def test_full_loan_calculation(client):
     print(" -- full loan calculation and amortization table integration test")
     for field, value in data.items():
         assert value.encode() in response.data
+
+def test_404_error_handler():
+    # Create a test client for the Flask app
+    test_client = app.test_client()
+
+    # Send a GET request to a non-existing URL
+    response = test_client.get('/non_existing_url')
+
+    print("\r")
+    print(" -- 404 Error Test")
+
+    # Check if the response status code is 404
+    assert response.status_code == 404
+
+    # Check if the rendered template is '404.html'
+    assert b'404 Error' in response.data

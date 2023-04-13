@@ -1,5 +1,5 @@
-from flask import Flask
-from flask import render_template, request, redirect, url_for
+from flask import Flask, render_template, request, redirect, url_for
+import pytest
 
 app = Flask(__name__)
 
@@ -89,6 +89,10 @@ def mnthlyPmt():
         )
 
     return redirect(url_for("index"))
+
+@app.errorhandler(404)
+def not_found_error(error):
+    return render_template("404.html"), 404
 
 
 if __name__ == "__main__":
