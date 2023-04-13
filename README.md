@@ -10,6 +10,8 @@ Basic Flask application using Jinja templates. The user enters details of their 
 
 This application is used to teach CI/CD including automated testing and GitHub Actions workflow files (.yaml)
 
+Group Members: Adam Severson and Anna (Josie) Holke-Farnam
+
 x
 
 ### To Run This Application
